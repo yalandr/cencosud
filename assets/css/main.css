@@ -80,7 +80,6 @@ li {
     font-family: var(--font-primary);
     font-weight: 600;
     font-size: 1.125rem;
-    line-height: 22px;
     text-transform: uppercase;
     color: #333333;
     border: none;
@@ -141,6 +140,10 @@ li {
     color: #fff;
     border-bottom: 1px solid #3F77EC;
 }
+.logo-img {
+    width: 7.5rem;
+    height: auto;
+}
 .navigation-list-item {
     margin-left: 3rem;
     font-size: 1.125rem;
@@ -148,6 +151,10 @@ li {
 }
 .navigation-list-item:hover {
     text-shadow: 0 3px 6px #111;
+}
+.mob-menu,
+.navigation.mobile {
+    display: none;
 }
 /*==== SECTION-HERO ====*/
 .section-hero {
@@ -259,6 +266,8 @@ li {
 /*==== HERO-DECORATION-CIRCLES ====*/
 .section-hero .circle-decor {
     position: absolute;
+    width: 25rem;
+    height: 25rem;
 }
 .section-hero .circle-decor.one {
     top: -4rem;
@@ -314,7 +323,8 @@ li {
 .section-about .fading-heading {
     position: absolute;
     top: 5.6rem;
-    left: 38%;
+    right: 50%;
+    transform: translate(50%, 0);
     font-weight: 600;
     font-size: 8.75rem;
     line-height: 10.5rem;
@@ -324,6 +334,8 @@ li {
 .section-about .circle-decor {
     position: absolute;
     top: 28%;
+    width: 25rem;
+    height: 25rem;
 }
 .section-about .circle-decor.one {
     left: 13%;
@@ -369,6 +381,8 @@ li {
     margin: 1.5rem 0 .5rem 0;
 }
 .benefits-card-img-wrapper .circle-decor {
+    width: 7.5rem;
+    height: 7.5rem;
     position: absolute;
     top: 10%;
     right: -38%;
@@ -447,6 +461,7 @@ li {
     text-transform: uppercase;
     color: #FFFFFF;
     position: absolute;
+    z-index: 3;
     top: 1.8rem;
     right: -1.1rem;
     padding: 0.5rem;
@@ -459,6 +474,8 @@ li {
 }
 .wave-decor {
     position: absolute;
+    width: 16rem;
+    height: auto;
 }
 .wave-decor.left {
     top: 0;
@@ -473,12 +490,16 @@ li {
     animation-iteration-count: infinite;
 }
 .circle-decor-large {
+    width: 48.5rem;
+    height: 48.5rem;
     position: absolute;
     top: 50%;
     right: 50%;
     transform: translate(50%, -50%);
 }
 .circle-decor-thin {
+    width: 32rem;
+    height: 32rem;
     position: absolute;
     top: 50%;
     right: 50%;
@@ -499,6 +520,8 @@ li {
     transition: .3s;
 }
 .circle-decor-mini {
+    width: 2.7rem;
+    height: 2.7rem;
     transition: .3s;
 }
 .offers-circle:hover > .circle-decor-mini {
@@ -523,6 +546,10 @@ li {
     padding: 2rem;
     margin-bottom: 1.5rem;
     position: relative;
+    transition: .2s;
+}
+.steps-card:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 .steps-card-img-wrapper {
     padding-right: 2.5rem;
@@ -533,7 +560,7 @@ li {
     height: auto;
 }
 .steps-card-content {
-    padding: 0 3.5rem;
+    padding: 0 0 0 3.5rem;
 }
 .steps-card-content .card-heading {
     margin-bottom: 1.25rem;
@@ -542,14 +569,19 @@ li {
     max-width: 32rem;
 }
 .steps-card-number {
+    width: 10rem;
+    text-align: center;
     position: absolute;
     top: 2rem;
-    right: 2rem;
+    right: 3rem;
     font-weight: 600;
     font-size: 8rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: rgba(72, 84, 109, 0.05);
+}
+.steps-card:hover > .steps-card-number {
+    color: rgba(72, 84, 109, 0.2);
 }
 
 /*==== SECTION-ACTION ====*/
@@ -577,6 +609,8 @@ li {
     position: absolute;
 }
 .section-action .circle-action-center {
+    width: 32rem;
+    height: 32rem;
     top: 50%;
     right: 50%;
     transform: translate(50%, -50%);
@@ -588,37 +622,53 @@ li {
 .circle-decor-medium.left.one {
     top: -7rem;
     left: -5.3rem;
+    animation: rotationFFD 18s;
+    animation-iteration-count: infinite;
 }
 .circle-decor-medium.left.two {
     top: 3.6rem;
     left: 5.3rem;
+    animation: rotationRWD 14s;
+    animation-iteration-count: infinite;
 } 
 .circle-decor-medium.left.three {
     top: 15.6rem;
     left: -5.3rem;
+    animation: rotationFFD 10s;
+    animation-iteration-count: infinite;
 } 
 .circle-decor-medium.left.four {
     top: 26.2rem;
     left: 5.3rem;
+    animation: rotationRWD 22s;
+    animation-iteration-count: infinite;
 }
 .circle-decor-medium.right.one {
     top: -7rem;
     right: -5.3rem;
+    animation: rotationRWD 10s;
+    animation-iteration-count: infinite;
 }
 .circle-decor-medium.right.two {
     top: 3.6rem;
     right: 5.3rem;
+    animation: rotationFFD 20s;
+    animation-iteration-count: infinite;
 } 
 .circle-decor-medium.right.three {
     top: 15.6rem;
     right: -5.3rem;
+    animation: rotationRWD 14s;
+    animation-iteration-count: infinite;
 } 
 .circle-decor-medium.right.four {
     top: 26.2rem;
     right: 5.3rem;
+    animation: rotationFFD 18s;
+    animation-iteration-count: infinite;
 }     
 
-
+/*==== FOOTER ====*/
 .footer {
     background-color: #404A63;
     padding: 2rem 0;
@@ -631,5 +681,474 @@ li {
 }
 .footer-link:hover {
     color: #fff !important
+}
+
+/*==== MEDIA QUERIES ====*/
+@media (max-width: 1400px) {
+    .container {
+        max-width: 1180px;
+    }
+    .header {
+        padding: 1.5rem 0;
+    }
+    .video-wrapper-descr {
+        font-size: 1.1rem;
+    }
+    .section-hero .circle-decor,
+    .section-about .circle-decor {
+        width: 20rem;
+        height: 20rem;
+    }
+    .section-about .section-text {
+        line-height: 40px;
+    }
+    .section-about .circle-decor.one {
+        left: 8%;
+    }
+    .section-about .circle-decor.two {
+        right: 8%;
+    }
+    .section-text {
+        line-height: 32px;
+    }
+    .offer-card {
+        padding: 1rem 1rem;
+    }
+    .steps-card {
+        padding: 1rem 2rem;
+        margin-bottom: 1rem;
+    }
+    .offer-card.most-popular {
+        padding: 2rem 1.2rem;
+    }
+}
+@media (max-width: 1000px) {
+    .section-heading {
+        font-size: 2.1rem;
+        line-height: 2.8rem;
+    }
+    .section-text {
+        line-height: 28px;
+    }
+    .btn {
+        height: 3rem;
+        width: 14rem;
+        font-size: 1rem;
+    }
+    .header {
+        padding: 1rem 0;
+    }
+    .section-hero .circle-decor,
+    .section-about .circle-decor {
+        width: 16rem;
+        height: 16rem;
+    }
+    .main-heading {
+        font-size: 2.2rem;
+    }
+    .video-wrapper-descr {
+        font-size: 1rem;
+    }
+    .hero-content-form-wrapper {
+        width: 40%;
+        padding: 1rem;
+    }
+    .form .input-wrap {
+        margin: 12px 0;
+    }
+    .form .input-wrap input {
+        height: 3rem;
+    }
+    .section-about {
+        padding: 6rem 0;
+    }
+    .section-about .fading-heading {
+        top: 1rem;
+    }
+    .section-about .section-heading {
+        margin-bottom: 1.5rem;
+    }
+    .section-about .circle-decor.one {
+        left: 6%;
+    }
+    .section-about .circle-decor.two {
+        right: 6%;
+    }
+    .section-benefits {
+        padding: 0 0 6rem 0;
+    }
+    .section-benefits .container {
+        padding: 2rem;
+    }
+    .benefits-card {
+        width: 28%;
+    }
+    .benefits-card-img-wrapper .circle-decor {
+        width: 6rem;
+        height: 6rem;
+        top: 15%;
+        right: -25%;
+    }
+    .card-heading {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+    }
+    .section-offers {
+        padding: 6rem 0;
+    }
+    .offer-card-img-wrapper {
+        height: 11rem;
+    }
+    .wave-decor {
+        width: 10rem;
+    }
+    .circle-decor-large {
+        width: 100%;
+        height: auto;
+    }
+    .circle-decor-thin {
+        width: 80%;
+        height: auto;
+    }
+    .section-steps {
+        padding: 6rem 0;
+    }
+    .steps-cards-wrapper {
+        margin-top: 3rem;
+    }
+    .steps-card-img-wrapper {
+        padding-right: 1rem;
+    }
+    .steps-card-img {
+        width: 8rem;
+    }
+    .steps-card-content {
+        padding: 0 0 0 2rem;
+    }
+    .steps-card-content .card-heading {
+        margin-bottom: .5rem;
+    }
+    .steps-card-number {
+        top: 1rem;
+        right: 2.5rem;
+    }
+    .section-action {
+        padding: 6rem 0;
+    }
+    .section-action .section-heading {
+        max-width: 40rem;
+        margin: 0 auto 2rem auto;
+    }
+    .section-action .circle-action-center {
+        width: 24rem;
+        height: 24rem;
+    }
+    .circle-decor-medium {
+        width: 6rem;
+        height: 6rem;
+    }
+    .circle-decor-medium.left.one {
+        top: -3rem;
+        left: -3rem;
+    }
+    .circle-decor-medium.left.two {
+        top: 3rem;
+        left: 3rem;
+    } 
+    .circle-decor-medium.left.three {
+        top: 9rem;
+        left: -3rem;
+    } 
+    .circle-decor-medium.left.four {
+        top: 15rem;
+        left: 3rem;
+    }
+    .circle-decor-medium.right.one {
+        top: -3rem;
+        right: -3rem;
+    }
+    .circle-decor-medium.right.two {
+        top: 3rem;
+        right: 3rem;
+    } 
+    .circle-decor-medium.right.three {
+        top: 9rem;
+        right: -3rem;
+    } 
+    .circle-decor-medium.right.four {
+        top: 15rem;
+        right: 3rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .navigation-list-item {
+        margin-left: 2rem;
+    }
+    .btn {
+        min-height: 3rem;
+        width: 11rem;
+        padding: 1rem;
+    }
+    .section-hero,
+    .section-benefits {
+        padding: 0 0 4rem 0;
+    }
+    .hero-content {
+        padding: 2rem 0 0 0;
+        flex-direction: column;
+    }
+    .hero-content-video-wrapper {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    .main-heading {
+        text-align: center;
+        margin: 0 4rem;
+    }
+    .video-wrapper {
+        margin: 2rem 0 0 0;
+    }
+    .video-wrapper-descr {
+        text-align: center;
+    }
+    .hero-content-form-wrapper {
+        width: 90%;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+    .section-hero .circle-decor.two {
+        top: 40%;
+        left: 2%;
+    }
+    .section-hero .circle-decor.four {
+        top: 68%;
+        right: 2%;
+    }
+    .section-hero .circle-decor.three {
+        left: 6%;
+    }
+    .section-hero .circle-decor.five {
+        top: 14%;
+        right: -2.5rem;
+    }
+    .section-about,
+    .section-steps,
+    .section-offers,
+    .section-action {
+        padding: 4rem 0;
+    }
+    .offers-wrapper {
+        margin-top: 3rem;
+    }
+    .offer-card,
+    .offer-card.most-popular {
+        padding: 1rem .5rem;
+    }
+    .offer-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .logo-img {
+        width: 5rem;
+    }
+    .navigation {
+        display: none;
+    }
+    /* .mob-menu,
+    .navigation.mobile {
+        display: block;
+    }
+    .navigation.mobile {
+        position: fixed;
+        z-index: 33;
+        top: 0;
+        right: 0;
+        width: 80%;
+    }
+    .navigation-list.mobile {
+        flex-direction: column;
+        background-color: var(--main-blue);
+        min-height: 100vh;
+        justify-content: center;
+
+    }
+    .navigation-list-item.mobile {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+    } */
+
+
+
+
+
+    .main-heading {
+        margin: 0 0;
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+    }
+    .video-wrapper-descr {
+        font-size: .9rem;
+        line-height: 1.1rem;
+    }
+    .hero-content-form-wrapper {
+        width: 100%;
+    }
+    .form-heading {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+        padding-bottom: 1rem;
+    }
+    .section-hero .circle-decor, 
+    .section-about .circle-decor {
+        width: 12rem;
+        height: 12rem;
+    }
+    .section-heading {
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+    }
+    .section-about .fading-heading {
+        top: 1rem;
+        font-size: 7rem;
+        line-height: 7rem;
+    }
+    .section-about .section-text {
+        line-height: 2.2rem;
+    }
+    .section-about .circle-decor.two {
+        top: 60%;
+    }
+    .section-benefits .container {
+        flex-direction: column;
+        padding-bottom: 0;
+    }
+    .benefits-card {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+    .benefits-card-img-wrapper {
+        width: 8rem;
+        height: 8rem;
+        margin: 0 auto;
+    }
+    .offers-circle {
+        width: 3rem;
+        height: 3rem;
+        top: -1.5rem;
+    }
+    .circle-decor-mini {
+        width: 1.9rem;
+        height: 1.9rem;
+    }
+    .offers-wrapper {
+        margin-top: 2rem;
+        flex-direction: column;
+    }
+    .offer-card {
+        width: 90%;
+        margin-bottom: 1rem;
+    }
+    .offer-card, .offer-card.most-popular {
+        padding: 1rem 1rem;
+    }
+    .steps-cards-wrapper {
+        margin-top: 2rem;
+    } 
+    .steps-card {
+        padding: 1rem 1rem;
+        margin-bottom: 1rem;
+        flex-direction: column;
+    }
+    .steps-card-img-wrapper {
+        padding-right: 0;
+        border-right: none;
+    }
+    .steps-card-img {
+        width: 6rem;
+    }
+    .steps-card-content {
+        padding: 0;
+        text-align: center;
+    }
+    .steps-card-content .card-heading {
+        margin-bottom: 0;
+    }
+    .steps-card-number {
+        width: 6rem;
+        height: 5rem;
+        top: .5rem;
+        right: 3rem;
+        font-size: 6rem;
+        text-align: right;
+    }
+    .steps-card-number.one {
+        right: 1.5rem;
+    }
+    .section-action {
+        padding: 3rem 0;
+    }
+    .section-action .section-heading {
+        margin: 0 auto 1rem auto;
+    }
+    .section-action .circle-action-center {
+        width: 18rem;
+        height: 18rem;
+    }
+    .circle-decor-medium {
+        width: 4rem;
+        height: 4rem;
+    }
+    .circle-decor-medium.left.one {
+        top: -2rem;
+        left: -2rem;
+    }
+    .circle-decor-medium.left.two {
+        top: 2rem;
+        left: 2rem;
+    } 
+    .circle-decor-medium.left.three {
+        top: 6rem;
+        left: -2rem;
+    } 
+    .circle-decor-medium.left.four {
+        top: 10rem;
+        left: 2rem;
+    }
+    .circle-decor-medium.right.one {
+        top: -2rem;
+        right: -2rem;
+    }
+    .circle-decor-medium.right.two {
+        top: 2rem;
+        right: 2rem;
+    } 
+    .circle-decor-medium.right.three {
+        top: 6rem;
+        right: -2rem;
+    } 
+    .circle-decor-medium.right.four {
+        top: 10rem;
+        right: 2rem;
+    }
+    .footer {
+        padding: 1.5rem 0;
+    }
+    .footer .container {
+        flex-direction: column;
+    }
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+    .footer-link {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
 }
 
