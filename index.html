@@ -31,19 +31,23 @@
                             </li>
                         </ul>
                     </nav>
-                    <div class="mob-menu">MENU</div>
+                    <img src="assets/img/hamburger.png" alt="menu" class="menu-open-img">
                     <nav class="navigation mobile">
+                        <img src="assets/img/close.png" alt="close" class="menu-close-img">
                         <ul class="navigation-list mobile flex">
-                            <li class="navigation-list-item mobile" onclick="scrollToAbout()">
+                            <li class="navigation-list-item mobile" onclick="scrollToTop(),menuClosing()">
+                                <img src="assets/img/logo.svg" alt="logo" class="logo-img"> 
+                            </li>
+                            <li class="navigation-list-item mobile" onclick="scrollToAbout(),menuClosing()">
                                 <a href="javascript:void(0)">About us</a> 
                             </li>
-                            <li class="navigation-list-item mobile" onclick="scrollToBenefits()">
+                            <li class="navigation-list-item mobile" onclick="scrollToBenefits(),menuClosing()">
                                 <a href="javascript:void(0)">Benefits</a> 
                             </li>
-                            <li class="navigation-list-item mobile" onclick="scrollToOffers()">
+                            <li class="navigation-list-item mobile" onclick="scrollToOffers(),menuClosing()">
                                 <a href="javascript:void(0)">Investment offers</a> 
                             </li>
-                            <li class="navigation-list-item mobile" onclick="scrollToSteps()">
+                            <li class="navigation-list-item mobile" onclick="scrollToSteps(),menuClosing()">
                                 <a href="javascript:void(0)">How it works</a> 
                             </li>
                         </ul>
