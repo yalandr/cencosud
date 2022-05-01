@@ -718,7 +718,7 @@ li {
 }
 
 /*==== MEDIA QUERIES ====*/
-@media (max-width: 1400px) {
+@media (max-width: 1600px) {
     .container {
         max-width: 1180px;
     }
