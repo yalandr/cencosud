@@ -20,39 +20,40 @@
         <nav class="navigation mobile">
             <img src="assets/img/close.png" alt="close" class="menu-close-img">
             <ul class="navigation-list mobile flex">
-                <li class="navigation-list-item mobile" onclick="scrollToTop(),menuClosing()">
+                <li class="navigation-list-item mobile" onclick="scrollToElem('.header'),menuClosing()">
                     <img src="assets/img/logo.svg" alt="logo" class="logo-img"> 
                 </li>
-                <li class="navigation-list-item mobile" onclick="scrollToAbout(),menuClosing()">
+                <li class="navigation-list-item mobile" onclick="scrollToElem('.section-about'),menuClosing()">
                     <a href="javascript:void(0)">Sobre nosotros</a> 
                 </li>
-                <li class="navigation-list-item mobile" onclick="scrollToBenefits(),menuClosing()">
+                <li class="navigation-list-item mobile" onclick="scrollToElem('.section-benefits'),menuClosing()">
                     <a href="javascript:void(0)">Beneficios</a> 
                 </li>
-                <li class="navigation-list-item mobile" onclick="scrollToOffers(),menuClosing()">
+                <li class="navigation-list-item mobile" onclick="scrollToElem('.section-offers'),menuClosing()">
                     <a href="javascript:void(0)">Ofertas de inversión</a> 
                 </li>
-                <li class="navigation-list-item mobile" onclick="scrollToSteps(),menuClosing()">
+                <li class="navigation-list-item mobile" onclick="scrollToElem('.section-steps'),menuClosing()">
                     <a href="javascript:void(0)">Cómo funciona</a> 
                 </li>
             </ul>
         </nav>
+        <div class="menu-underlay"></div>
         <section class="section-hero">
             <div class="container">
                 <header class="header flex justify-between">
-                    <img src="assets/img/logo.svg" alt="logo" class="logo-img">
+                    <img src="assets/img/logo.svg" alt="logo" class="logo-img" loading="lazy">
                     <nav class="navigation">
                         <ul class="navigation-list flex">
-                            <li class="navigation-list-item" onclick="scrollToAbout()">
+                            <li class="navigation-list-item" onclick="scrollToElem('.section-about')">
                                 <a href="javascript:void(0)">Sobre nosotros</a> 
                             </li>
-                            <li class="navigation-list-item" onclick="scrollToBenefits()">
+                            <li class="navigation-list-item" onclick="scrollToElem('.section-benefits')">
                                 <a href="javascript:void(0)">Beneficios</a> 
                             </li>
-                            <li class="navigation-list-item" onclick="scrollToOffers()">
+                            <li class="navigation-list-item" onclick="scrollToElem('.section-offers')">
                                 <a href="javascript:void(0)">Ofertas de inversión</a> 
                             </li>
-                            <li class="navigation-list-item" onclick="scrollToSteps()">
+                            <li class="navigation-list-item" onclick="scrollToElem('.section-steps')">
                                 <a href="javascript:void(0)">Cómo funciona</a> 
                             </li>
                         </ul>
@@ -65,7 +66,7 @@
                             Cencosud SA espera recaudar más de 300 millones de dólares en la IPO
                         </h1>
                         <div class="video-wrapper video">
-                            <video src="assets/video/en-1.mp4" width="100%" controls controlsList="nodownload" poster="assets/video/poster.jpg"></video>
+                            <video width="100%" controls controlsList="nodownload" poster="assets/video/poster.jpg" playsinline></video>
                             <div class="play-btn"></div>
                         </div>
                         <p class="video-wrapper-descr">🔥 Compre nuestras acciones mientras estén baratas 🔥</p>
@@ -120,7 +121,7 @@
             <div class="container flex justify-between align-start">
                 <div class="benefits-card animated">
                     <div class="benefits-card-img-wrapper">
-                        <img src="assets/img/money.png" alt="money" class="benefits-card-icon">
+                        <img src="assets/img/money.png" alt="money" class="benefits-card-icon" loading="lazy">
                         <img src="assets/img/circle-gray-small.svg" alt="circle" class="circle-decor">
                     </div>
                     <h4 class="card-heading">Mayor propietario de inmuebles</h4>
@@ -130,7 +131,7 @@
                 </div>
                 <div class="benefits-card animated">
                     <div class="benefits-card-img-wrapper">
-                        <img src="assets/img/gift.png" alt="gift" class="benefits-card-icon">
+                        <img src="assets/img/gift.png" alt="gift" class="benefits-card-icon" loading="lazy">
                         <img src="assets/img/circle-gray-small.svg" alt="circle" class="circle-decor">
                     </div>
                     <h4 class="card-heading">La mayor salida a bolsa de la historia</h4>
@@ -140,7 +141,7 @@
                 </div>
                 <div class="benefits-card animated">
                     <div class="benefits-card-img-wrapper">
-                        <img src="assets/img/percent.png" alt="percent" class="benefits-card-icon">
+                        <img src="assets/img/percent.png" alt="percent" class="benefits-card-icon" loading="lazy">
                         <img src="assets/img/circle-gray-small.svg" alt="circle" class="circle-decor">
                     </div>
                     <h4 class="card-heading">Llega pronto</h4>
@@ -158,61 +159,61 @@
                 <div class="offers-wrapper flex justify-between">
                     <div class="offer-card animated">
                         <div class="offer-card-img-wrapper">
-                            <img src="assets/img/paris.png" alt="offer-logo" class="offer-card-img">
+                            <img src="assets/img/paris.png" alt="offer-logo" class="offer-card-img" loading="lazy">
                         </div>
                         <h4 class="offer-card-heading">PARIS</h4>
                         <ul class="offer-benefits-list">
                             <li class="offer-benefits-item flex justify-between">
                                 <p class="section-text">Beneficio mensual:</p>
-                                <div class="offer-benefits-number">17%</div>
+                                <div class="offer-benefits-number"><span class="counter" data-to="17" data-stop="0">0</span>%</div>
                             </li>
                             <li class="offer-benefits-item flex justify-between">
                                 <p class="section-text">Depósito mínimo:</p>
-                                <div class="offer-benefits-number">€250</div>
+                                <div class="offer-benefits-number">€200</div>
                             </li>
                         </ul>
-                        <button class="btn offer-btn" onclick="scrollToForm()">INVIERTE AHORA</button>
+                        <button class="btn offer-btn" onclick="scrollToElem('.form')">INVIERTE AHORA</button>
                     </div>
                     <div class="offer-card most-popular animated">
                         <div class="offer-card-img-wrapper">
-                            <img src="assets/img/jumbo.png" alt="offer-logo" class="offer-card-img">
+                            <img src="assets/img/jumbo.png" alt="offer-logo" class="offer-card-img" loading="lazy">
                         </div>
                         <h4 class="offer-card-heading">Jumbo</h4>
                         <ul class="offer-benefits-list">
                             <li class="offer-benefits-item flex justify-between">
                                 <p class="section-text">Beneficio mensual:</p>
-                                <div class="offer-benefits-number">24%</div>
+                                <div class="offer-benefits-number"><span class="counter" data-to="24" data-stop="0">0</span>%</div>
                             </li>
                             <li class="offer-benefits-item flex justify-between">
                                 <p class="section-text">Depósito mínimo:</p>
-                                <div class="offer-benefits-number">€250</div>
+                                <div class="offer-benefits-number">€200</div>
                             </li>
                         </ul>
-                        <button class="btn offer-btn" onclick="scrollToForm()">INVIERTE AHORA</button>
+                        <button class="btn offer-btn" onclick="scrollToElem('.form')">INVIERTE AHORA</button>
                         <div class="popular-tag">
                             EL MÁS POPULAR
                         </div>
                     </div>
                     <div class="offer-card animated">
                         <div class="offer-card-img-wrapper">
-                            <img src="assets/img/costanera.png" alt="offer-logo" class="offer-card-img">
+                            <img src="assets/img/costanera.png" alt="offer-logo" class="offer-card-img" loading="lazy">
                         </div>
                         <h4 class="offer-card-heading">COSTANERA CENTER</h4>
                         <ul class="offer-benefits-list">
                             <li class="offer-benefits-item flex justify-between">
                                 <p class="section-text">Beneficio mensual:</p>
-                                <div class="offer-benefits-number">21%</div>
+                                <div class="offer-benefits-number"><span class="counter" data-to="21" data-stop="0">0</span>%</div>
                             </li>
                             <li class="offer-benefits-item flex justify-between">
                                 <p class="section-text">Depósito mínimo:</p>
-                                <div class="offer-benefits-number">€250</div>
+                                <div class="offer-benefits-number">€200</div>
                             </li>
                         </ul>
-                        <button class="btn offer-btn" onclick="scrollToForm()">INVIERTE AHORA</button>
+                        <button class="btn offer-btn" onclick="scrollToElem('.form')">INVIERTE AHORA</button>
                     </div>
                 </div>
             </div>
-            <div class="offers-circle" onclick="scrollToOffers()" animated>
+            <div class="offers-circle" onclick="scrollToElem('.section-offers')" animated>
                 <img src="assets/img/circle-mini-light.svg" alt="circle" class="circle-decor-mini">
             </div>
             <img src="assets/img/wave-decor.svg" alt="waves" class="wave-decor left">
@@ -228,7 +229,7 @@
                 <div class="steps-cards-wrapper">
                     <div class="steps-card flex animated">
                         <div class="steps-card-img-wrapper">
-                            <img src="assets/img/phone.png" alt="phone" class="steps-card-img">
+                            <img src="assets/img/phone.png" alt="phone" class="steps-card-img" loading="lazy">
                         </div>
                         <div class="steps-card-content">
                             <h4 class="card-heading">Regístrate en el sistema</h4>
@@ -238,7 +239,7 @@
                     </div>
                     <div class="steps-card flex animated">
                         <div class="steps-card-img-wrapper">
-                            <img src="assets/img/handshake.png" alt="handshake" class="steps-card-img">
+                            <img src="assets/img/handshake.png" alt="handshake" class="steps-card-img" loading="lazy">
                         </div>
                         <div class="steps-card-content">
                             <h4 class="card-heading">Habla con tu gestor personal</h4>
@@ -248,17 +249,17 @@
                     </div>
                     <div class="steps-card flex animated">
                         <div class="steps-card-img-wrapper">
-                            <img src="assets/img/wallet.png" alt="wallet" class="steps-card-img">
+                            <img src="assets/img/wallet.png" alt="wallet" class="steps-card-img" loading="lazy">
                         </div>
                         <div class="steps-card-content">
                             <h4 class="card-heading">Discuta una cantidad asequible para comenzar</h4>
-                            <p class="section-text">El depósito inicial es de sólo 250 euros.</p>
+                            <p class="section-text">El depósito inicial es de sólo 200 euros.</p>
                             <span class="steps-card-number">03</span>
                         </div>
                     </div>
                     <div class="steps-card flex animated">
                         <div class="steps-card-img-wrapper">
-                            <img src="assets/img/note.png" alt="note" class="steps-card-img">
+                            <img src="assets/img/note.png" alt="note" class="steps-card-img" loading="lazy">
                         </div>
                         <div class="steps-card-content">
                             <h4 class="card-heading">Verifica tu identidad</h4>
@@ -274,7 +275,7 @@
                 <h2 class="section-heading animated">
                     Comerciar sólo lo que vale la pena
                 </h2>
-                <button class="btn animated" onclick="scrollToForm()">Empezar ahora</button>
+                <button class="btn animated" onclick="scrollToElem('.form')">Empezar ahora</button>
             </div>
             <img src="assets/img/circle-gray-action.svg" alt="" class="circle-action-center">
             <img src="assets/img/circle-gray-medium.svg" alt="circle" class="circle-decor-medium left one">
@@ -288,12 +289,15 @@
         </section>
         <footer class="footer">
             <div class="container flex justify-between">
-                <p class="footer-copyright" onclick="scrollToTop()">
+                <div class="footer-links">
+                    <a href="javascript:void(0)" class="alterlink footer-link">Política de privacidad</a>
+                    <a href="javascript:void(0)" class="alterlink footer-link">Términos de Uso</a>
+                </div>
+                <p class="footer-copyright" onclick="scrollToElem('.header')">
                     Copyright <span id="currentYear">2022</span> © Cencosud
                 </p>
             </div>
         </footer>
     </div>
     <script src="assets/js/main.js"></script>
-</body>
 </html>

@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="assets/css/fonts.css">
 </head>
 <body>
-    <div class="main-wrapper thankyou">
+    <div class="main-wrapper" style="overflow-y:hidden">
         <nav class="navigation mobile">
             <img src="assets/img/close.png" alt="close" class="menu-close-img">
             <ul class="navigation-list mobile flex">
@@ -28,7 +28,8 @@
                 </li>
             </ul>
         </nav>
-        <section class="section-hero">
+        <div class="menu-underlay"></div>
+        <section class="section-hero" style="min-height:95vh;overflow:hidden">
             <div class="container">
                 <header class="header flex justify-between">
                     <img src="assets/img/logo.svg" alt="logo" class="logo-img">
@@ -60,6 +61,10 @@
         </section>
         <footer class="footer">
             <div class="container flex justify-between">
+                <div class="footer-links">
+                    <a href="javascript:void(0)" class="alterlink footer-link">Política de privacidad</a>
+                    <a href="javascript:void(0)" class="alterlink footer-link">Términos de Uso</a>
+                </div>
                 <p class="footer-copyright" onclick="scrollToTop()">
                     Copyright <span id="currentYear">2022</span> © Cencosud
                 </p>

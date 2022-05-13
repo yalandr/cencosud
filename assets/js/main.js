@@ -1,48 +1,36 @@
 // NAVIGATION
-const scrollToForm = () => {
-    document.querySelector('.form').scrollIntoView({behavior:"smooth"})
-}
-const scrollToTop = () => {
-    document.querySelector('.header').scrollIntoView({behavior:"smooth"})
-}
-const scrollToAbout = () => {
-    document.querySelector('.section-about').scrollIntoView({behavior:"smooth"})
-}
-const scrollToBenefits = () => {
-    document.querySelector('.section-benefits').scrollIntoView({behavior:"smooth"})
-}
-const scrollToOffers = () => {
-    document.querySelector('.section-offers').scrollIntoView({behavior:"smooth"})
-}
-const scrollToSteps = () => {
-    document.querySelector('.section-steps').scrollIntoView({behavior:"smooth"})
+const scrollToElem = (elem) => {
+    document.querySelector(elem).scrollIntoView({behavior:"smooth"})
 }
 
+// CURRENT YEAR
+document.querySelector('#currentYear').innerHTML = new Date().getFullYear();
+
 // MOBILE MENU
-let body = document.querySelector('body');
+let menuUnderlay = document.querySelector('.menu-underlay');
 let menuOpenImg = document.querySelector('.menu-open-img');
 let menuCloseImg = document.querySelector('.menu-close-img');
 let menuMobile = document.querySelector('.navigation.mobile');
-let sectionHero = document.querySelector('.section-hero');
 
 const menuOpening = () => {
     menuMobile.style.right = '0';
-    body.classList.add('blocked');
-    sectionHero.classList.add('blurred');
+    menuUnderlay.classList.add('active');
 }
 
 const menuClosing = () => {
     menuMobile.style.right = '-100%';
-    body.classList.remove('blocked');
-    sectionHero.classList.remove('blurred');
+    menuUnderlay.classList.remove('active');
 }
 
-menuOpenImg.onclick = () => {
+menuOpenImg.addEventListener('click', () => {
     menuOpening();
-}
-menuCloseImg.onclick = () => {
+})
+menuCloseImg.addEventListener('click', () => {
     menuClosing();
-}
+})
+menuUnderlay.addEventListener('click', () => {
+    menuClosing();
+})
 
 // ANIMATION ON SCROLL
 let animatedItems = document.querySelectorAll('.animated');
@@ -75,6 +63,32 @@ if (animatedItems.length) {
 }
 
 window.addEventListener('scroll', fadeInOnScroll);
+
+// PERCENT COUNTDOWN
+(function(){
+    let counter = document.querySelectorAll('.counter');
+    let limit = 0;
+    window.addEventListener('scroll', function(){  
+      if( limit == counter.length ){ return; }
+      for(let i = 0; i < counter.length; i++){
+        let pos = counter[i].getBoundingClientRect().top;
+        let win = window.innerHeight - 60;
+        if( pos < win && counter[i].dataset.stop === "0" ){
+          counter[i].dataset.stop = 1;
+          let x = 0;
+          limit++;
+          let int = setInterval(function(){
+            x = x + Math.ceil( counter[i].dataset.to / 50 ); 
+            counter[i].innerText = x;
+            if( x > counter[i].dataset.to ){
+              counter[i].innerText = counter[i].dataset.to;
+              clearInterval(int);
+            }
+          }, 60);
+        }
+      }
+    });
+})();
 
 // Form Submission
 let nameValue = document.querySelector('.name');
