@@ -269,6 +269,12 @@ li {
     padding-bottom: 1.5rem;
     border-bottom: 1px solid #D5D5D5;
 }
+.form-disclaimer {
+    font-size: 12px;
+    line-height: 1.4;
+    text-align: center;
+    margin-top: 1rem;
+}
 .form .input-wrap {
     margin: 18px 0;
 }
